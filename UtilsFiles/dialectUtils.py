@@ -9,6 +9,7 @@ import random
 import aranorm
 import logging
 import datetime
+import joblib
 import numpy as np
 import pandas as pd
 from numpy import pi
@@ -58,6 +59,16 @@ def tweet_preprcessing(tweet):
     text_preprocessed = preprocess_arabert.preprocess(tweet, do_farasa_tokenization=True)
     preprocessed_tweet= aranorm.normalize_arabic_text(text_preprocessed)
     return preprocessed_tweet
+#**************************************************************************************************************
+#**************************************************************************************************************
+def predictLinearSVC(tweet,path):
+  print('Predicting dialect for tweet...')
+  
+  model= joblib.load(path)
+  df = pd.DataFrame({'T':tweet})
+  df['T'] = df['T'].apply(tweet_preprcessing)
+  dialect = keys_dictionary_full.get(model.predict(df['T'])[0])
+  return dialect
 #**************************************************************************************************************
 def flat_accuracy(logits, labels,device):
   pred_flat = np.argmax(logits.cpu().detach().numpy(), axis=1).flatten()
