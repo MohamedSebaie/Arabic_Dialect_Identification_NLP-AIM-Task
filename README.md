@@ -3,15 +3,14 @@
 
 The goal of AIM task is to classifying the dialect of the tweet writer given the tweet itself.
 
-I used two approches:
-1- Machine Learning Aproach Using `LinearSVC`
-2- Deep Learning Approach Using `AraBERT Transformer`
+#### I used two approches:
+##### 1- Machine Learning Aproach Using `LinearSVC`
+##### 2- Deep Learning Approach Using `AraBERT Transformer`
 
 ### The Deployment is by Machine learning model and steps to run the flask
 ##### 1- Download the pkl model from the drive in <a href="https://drive.google.com/file/d/10rMqbtYPBdrkh0bQxKeAerMCp6lzMyE-/view?usp=sharing">this link</a>
 ##### 2- Put the Model in the `Flask_Deployment` Folder
 ##### 3- From CMD `flask run`
 
-<h1 style="color: blue"><b>Confusion Matrix</b></h1>
-<img src="images/confusionMatrix.png" alt="Simply Easy Learning" >
+<!-- <img src="images/confusionMatrix.png" alt="Simply Easy Learning" > -->
 
