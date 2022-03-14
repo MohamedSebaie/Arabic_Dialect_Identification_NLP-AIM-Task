@@ -65,7 +65,7 @@ def predictLinearSVC(tweet,path):
   print('Predicting dialect for tweet...')
   
   model= joblib.load(path)
-  df = pd.DataFrame({'T':tweet})
+  df = pd.DataFrame({'T':[tweet]})
   df['T'] = df['T'].apply(tweet_preprcessing)
   dialect = keys_dictionary_full.get(model.predict(df['T'])[0])
   return dialect
